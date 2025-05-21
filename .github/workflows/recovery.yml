@@ -38,10 +38,6 @@ jobs:
           chmod +x script2.sh
           ./script2.sh || true
 
-          # Optional: rename if needed
-          cp recovery.img patched-recovery.img
-
-          # AVB patching
           python3 avbtool extract_public_key --key phh.pem --output phh.pub.bin
           python3 avbtool add_hash_footer \
             --partition_name recovery \
